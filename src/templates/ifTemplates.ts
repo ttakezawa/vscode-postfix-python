@@ -14,6 +14,26 @@ export class IfTemplate extends BaseExpressionTemplate {
   }
 }
 
+export class IfElseTemplate extends BaseExpressionTemplate{
+  buildCompletionItem (code: string, position: vsc.Position) {
+    return CompletionItemBuilder
+      .create('ifelse', code)
+      .description('if expr: ... else: ...')
+      .replace(`if {{expr}}: \n${getIndentCharacters()}\${0}\nelse: \n${getIndentCharacters()}\n`, position, true)
+      .build()
+  }
+}
+
+export class IfElifTemplate extends BaseExpressionTemplate{
+  buildCompletionItem (code: string, position: vsc.Position) {
+    return CompletionItemBuilder
+      .create('ifelif', code)
+      .description('if expr: ... elif: ...')
+      .replace(`if {{expr}}: \n${getIndentCharacters()}\${0}\nelif: \n${getIndentCharacters()}\n`, position, true)
+      .build()
+  }
+}
+
 // export class ElseTemplate extends BaseExpressionTemplate {
 //   buildCompletionItem (code: string, position: vsc.Position, node: ts.Node) {
 //     let replacement = '{{expr}}'
@@ -45,6 +65,8 @@ export class IfTemplate extends BaseExpressionTemplate {
 
 export const build = () => [
   new IfTemplate(),
+  new IfElseTemplate(),
+  new IfElifTemplate(),
   // new ElseTemplate(),
   // new IfEqualityTemplate('null', '===', null),
   // new IfEqualityTemplate('notnull', '!==', null),
