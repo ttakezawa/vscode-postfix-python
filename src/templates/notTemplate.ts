@@ -16,7 +16,7 @@ export class NotTemplate extends BaseExpressionTemplate {
 export class IsNoneTemplate extends BaseExpressionTemplate {
   buildCompletionItem (code: string, position: vsc.Position) {
     return CompletionItemBuilder
-      .create(`isnone`, code)
+      .create(`none`, code)
       .description(`expr is None`)
       .replace(`\${1:{{expr}}} is None`, position, true)
       .build()
@@ -26,7 +26,7 @@ export class IsNoneTemplate extends BaseExpressionTemplate {
 export class IsNotNoneTemplate extends BaseExpressionTemplate {
   buildCompletionItem (code: string, position: vsc.Position) {
     return CompletionItemBuilder
-      .create(`isnotnone`, code)
+      .create(`notnone`, code)
       .description(`expr is not None`)
       .replace(`\${1:{{expr}}} is not None`, position, true)
       .build()
