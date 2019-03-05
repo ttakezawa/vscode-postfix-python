@@ -14,18 +14,15 @@ import { getCurrentDelay, delay } from './utils'
 
 const LANGUAGE = 'postfix'
 
-const VAR_TEMPLATES = ['var', 'let', 'const']
-const FOR_TEMPLATES = ['for', 'forof', 'foreach']
-const CONSOLE_TEMPLATES = ['log', 'warn', 'error']
-const IF_TEMPLATES = ['if', 'else', 'null', 'notnull', 'undefined', 'notundefined']
-const CAST_TEMPLATES = ['cast', 'castas']
+const FOR_TEMPLATES = ['forloop', 'forin']
+const IF_TEMPLATES = ['if', 'ifin', 'ifnn', 'if else', 'if elif']
+const NOT_TEMPLATES = ['not','none','notnone']
+const TRY_TEMPLATES = ['tryexcept', 'tryexceptfinally']
 const ALL_TEMPLATES = [
-  ...VAR_TEMPLATES,
   ...FOR_TEMPLATES,
-  ...CONSOLE_TEMPLATES,
   ...IF_TEMPLATES,
-  ...CAST_TEMPLATES,
-  'not',
+  ...NOT_TEMPLATES,
+  ...TRY_TEMPLATES,
   'return'
 ]
 
