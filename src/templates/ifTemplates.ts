@@ -39,7 +39,7 @@ export class IfElseTemplate extends BaseExpressionTemplate{
     return CompletionItemBuilder
       .create('if else', code)
       .description('if expr: ... else: ...')
-      .replace(`if {{expr}} : \n${getIndentCharacters()}\${0}\nelse: \n${getIndentCharacters()}\n`, position, true)
+      .replace(`if {{expr}} : \n${getIndentCharacters()}\${1}\nelse: \n${getIndentCharacters()}\${0}\n`, position, true)
       .build()
   }
 }
@@ -48,8 +48,8 @@ export class IfElifTemplate extends BaseExpressionTemplate{
   buildCompletionItem (code: string, position: vsc.Position) {
     return CompletionItemBuilder
       .create('if elif', code)
-      .description('if expr: ... elif: ...')
-      .replace(`if {{expr}} : \n${getIndentCharacters()}\${0}\nelif: \n${getIndentCharacters()}\n`, position, true)
+      .description('if expr: ... elif somecode : ...')
+      .replace(`if {{expr}} : \n${getIndentCharacters()}\${1}\nelif \${2:somecode}: \n${getIndentCharacters()}\${0}\n`, position, true)
       .build()
   }
 }
