@@ -1,8 +1,8 @@
 {
-	"name": "vscode-postfix-ts",
-	"displayName": "TS/JS postfix completion",
-	"description": "Postfix templates for TypeScript/Javascript",
-	"version": "1.8.1",
+	"name": "vscode-postfix-python",
+	"displayName": "Python postfix completion",
+	"description": "Postfix templates for Python",
+	"version": "0.0.1",
 	"license": "MIT",
 	"publisher": "filwaline",
 	"engines": {
