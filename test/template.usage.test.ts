@@ -23,7 +23,8 @@ const ALL_TEMPLATES = [
   ...IF_TEMPLATES,
   ...NOT_TEMPLATES,
   ...TRY_TEMPLATES,
-  'return'
+  'return',
+  'custom'
 ]
 
 describe('Template usage', () => {
@@ -36,8 +37,6 @@ describe('Template usage', () => {
   testTemplateUsage('property access expression', 'expr.a.b.c', ALL_TEMPLATES)
   testTemplateUsage('element access expression', 'expr.a.b[c]', ALL_TEMPLATES)
   testTemplateUsage('unary expression', 'expr++', _.difference(ALL_TEMPLATES, FOR_TEMPLATES))
-  testTemplateUsage('conditional expression', 'if (x * 100{cursor})', ['not'])
-  testTemplateUsage('return expression', 'return x * 100', ['not'])
   testTemplateUsage('inside single line comment', '// expr', [])
   testTemplateUsage('inside multi line comment', '/* expr{cursor} */', [])
 })
