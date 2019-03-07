@@ -2,7 +2,7 @@
 	"name": "vscode-postfix-python",
 	"displayName": "Python postfix completion",
 	"description": "Postfix templates for Python",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"publisher": "filwaline",
 	"engines": {
@@ -20,7 +20,7 @@
 		"url": "https://github.com/filwaline/vscode-postfix-python/issues"
 	},
 	"activationEvents": [
-		"onLanguage:postfix"
+		"*"
 	],
 	"main": "./out/src/extension",
 	"contributes": {
