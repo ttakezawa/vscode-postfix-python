@@ -2,7 +2,7 @@
 	"name": "vscode-postfix-python",
 	"displayName": "Python postfix completion",
 	"description": "Postfix templates for Python",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"license": "MIT",
 	"publisher": "filwaline",
 	"engines": {
