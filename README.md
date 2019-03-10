@@ -4,6 +4,8 @@ simply folk from [ipatalas/vscode-postfix-ts](https://github.com/ipatalas/vscode
 
 ## Features
 
+![demo.gif](images/demo.gif)
+
 All available templates (`expr` means the expression on which the template is applied):
 
 | Template          | Outcome |
