@@ -45,7 +45,7 @@ describe('Simple template tests', () => {
   it('not template - complex conditions - second expression - alt', testTemplateWithQuickPick('if (a > b && x * 100{cursor}) {}', 'not', 'if(a<=b||!(x*100)){}', true, 1))
   it('not template - complex conditions - cancel quick pick - alt', testTemplateWithQuickPick('if (a > b && x * 100{cursor}) {}', 'not', 'if(a>b&&x*100.){}', true, 0, true))
 
-  it('if template', testTemplate('expr', 'if', 'if(expr){}', true))
+  // it('if template', testTemplate('expr', 'if', 'if(expr){}', true))
   it('else template', testTemplate('expr', 'else', 'if(!expr){}', true))
   it('else template - binary expression', testTemplate('x * 100', 'else', 'if(!(x*100)){}', true))
 
