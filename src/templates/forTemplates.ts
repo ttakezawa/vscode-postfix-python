@@ -7,13 +7,9 @@ import { getIndentCharacters } from '../utils'
 abstract class BaseForTemplate extends BaseTemplate {
   abstract buildCompletionItem (code: string, position: vsc.Position, node: ts.Node, suffix: string)
 
-  canUse (node: ts.Node): boolean {
-    return node.parent &&
-      !this.inReturnStatement(node.parent) &&
-      !this.inIfStatement(node.parent) &&
-      (this.isExpression(node.parent) ||
-        this.isCallExpression(node.parent) ||
-        this.isArrayLiteral(node.parent))
+  // disable templates which don't work with Python
+  canUse (node: ts.Node) {
+    return false
   }
 
   protected isArrayLiteral = (node: ts.Node) => node.kind === ts.SyntaxKind.ArrayLiteralExpression

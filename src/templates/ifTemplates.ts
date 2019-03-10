@@ -12,6 +12,11 @@ export class IfTemplate extends BaseExpressionTemplate {
       .replace(`if ({{expr}}) {\n${getIndentCharacters()}\${0}\n}`, position, true)
       .build()
   }
+
+    // disable templates which don't work with Python
+    canUse (node: ts.Node) {
+      return false
+    }
 }
 
 export class ElseTemplate extends BaseExpressionTemplate {
@@ -27,6 +32,11 @@ export class ElseTemplate extends BaseExpressionTemplate {
       .replace(`if (!${replacement}) {\n${getIndentCharacters()}\${0}\n}`, position, true)
       .build()
   }
+
+    // disable templates which don't work with Python
+    canUse (node: ts.Node) {
+      return false
+    }
 }
 
 export class IfEqualityTemplate extends BaseExpressionTemplate {
@@ -41,6 +51,11 @@ export class IfEqualityTemplate extends BaseExpressionTemplate {
       .replace(`if ({{expr}} ${this.operator} ${this.operand}) {\n${getIndentCharacters()}\${0}\n}`, position, true)
       .build()
   }
+
+    // disable templates which don't work with Python
+    canUse (node: ts.Node) {
+      return false
+    }
 }
 
 export const build = () => [

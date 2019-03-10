@@ -35,13 +35,9 @@ export class NotTemplate extends BaseTemplate {
       .build()
   }
 
+  // disable templates which don't work with Python
   canUse (node: ts.Node) {
-    return node.parent && (
-        this.isExpression(node.parent) ||
-        this.isUnaryExpression(node.parent) ||
-        this.isBinaryExpression(node.parent) ||
-        this.isCallExpression(node.parent)
-      ) || this.isIdentifier(node)
+    return false
   }
 
   private getBinaryExpressions = (node: ts.Node) => {

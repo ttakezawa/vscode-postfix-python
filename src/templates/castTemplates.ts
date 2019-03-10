@@ -1,4 +1,5 @@
 import * as vsc from 'vscode'
+import * as ts from 'typescript'
 import { CompletionItemBuilder } from '../completionItemBuilder'
 import { BaseExpressionTemplate } from './baseTemplates'
 
@@ -20,6 +21,11 @@ export class CastTemplate extends BaseExpressionTemplate {
       .description(`(<SomeType>expr)`)
       .replace('(<$1>{{expr}})$0', position, true)
       .build()
+  }
+
+  // disable templates which don't work with Python
+  canUse (node: ts.Node) {
+    return false
   }
 }
 
