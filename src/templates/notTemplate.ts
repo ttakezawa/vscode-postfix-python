@@ -37,7 +37,7 @@ export class NotTemplate extends BaseTemplate {
 
   // disable templates which don't work with Python
   canUse (node: ts.Node) {
-    return false
+    return this.isTestMode()
   }
 
   private getBinaryExpressions = (node: ts.Node) => {

@@ -27,6 +27,10 @@ export abstract class BaseTemplate implements IPostfixTemplate {
 
     return currentNode
   }
+
+  isTestMode () {
+    return process.env.NODE_ENV === 'test'
+  }
 }
 
 export abstract class BaseExpressionTemplate extends BaseTemplate {

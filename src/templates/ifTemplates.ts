@@ -15,7 +15,7 @@ export class IfTemplate extends BaseExpressionTemplate {
 
     // disable templates which don't work with Python
     canUse (node: ts.Node) {
-      return false
+      return this.isTestMode()
     }
 }
 
@@ -35,7 +35,7 @@ export class ElseTemplate extends BaseExpressionTemplate {
 
     // disable templates which don't work with Python
     canUse (node: ts.Node) {
-      return false
+      return this.isTestMode()
     }
 }
 
@@ -54,7 +54,7 @@ export class IfEqualityTemplate extends BaseExpressionTemplate {
 
     // disable templates which don't work with Python
     canUse (node: ts.Node) {
-      return false
+      return this.isTestMode()
     }
 }
 

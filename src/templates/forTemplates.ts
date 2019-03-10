@@ -9,7 +9,7 @@ abstract class BaseForTemplate extends BaseTemplate {
 
   // disable templates which don't work with Python
   canUse (node: ts.Node) {
-    return false
+    return this.isTestMode()
   }
 
   protected isArrayLiteral = (node: ts.Node) => node.kind === ts.SyntaxKind.ArrayLiteralExpression

@@ -18,7 +18,7 @@ export class VarTemplate extends BaseExpressionTemplate {
 
     // disable templates which don't work with Python
     canUse (node: ts.Node) {
-      return false
+      return this.isTestMode()
     }
 }
 
