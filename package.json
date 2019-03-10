@@ -1,10 +1,10 @@
 {
-	"name": "vscode-postfix-ts",
-	"displayName": "TS/JS postfix completion",
-	"description": "Postfix templates for TypeScript/Javascript",
-	"version": "1.8.1",
+	"name": "vscode-postfix-python",
+	"displayName": "Python postfix completion",
+	"description": "Postfix templates for Python",
+	"version": "0.1.0",
 	"license": "MIT",
-	"publisher": "ipatalas",
+	"publisher": "filwaline",
 	"engines": {
 		"vscode": "^1.20.0"
 	},
@@ -14,10 +14,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ipatalas/vscode-postfix-ts"
+		"url": "https://github.com/filwaline/vscode-postfix-python"
 	},
 	"bugs": {
-		"url": "https://github.com/ipatalas/vscode-postfix-ts/issues"
+		"url": "https://github.com/filwaline/vscode-postfix-python/issues"
 	},
 	"activationEvents": [
 		"*"
@@ -31,8 +31,7 @@
 					"type": "array",
 					"description": "A list of languages in which the completion will be available",
 					"default": [
-						"javascript",
-						"typescript"
+						"python"
 					]
 				},
 				"postfix.customTemplates": {
