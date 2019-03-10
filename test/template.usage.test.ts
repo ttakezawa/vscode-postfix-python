@@ -14,17 +14,19 @@ import { getCurrentDelay, delay } from './utils'
 
 const LANGUAGE = 'postfix'
 
-const FOR_TEMPLATES = ['forloop', 'forin']
-const IF_TEMPLATES = ['if', 'ifin', 'ifnn', 'if else', 'if elif']
-const NOT_TEMPLATES = ['not','none','notnone']
-const TRY_TEMPLATES = ['tryexcept', 'tryexceptfinally']
+const VAR_TEMPLATES = ['var', 'let', 'const']
+const FOR_TEMPLATES = ['for', 'forof', 'foreach']
+const CONSOLE_TEMPLATES = ['log', 'warn', 'error']
+const IF_TEMPLATES = ['if', 'else', 'null', 'notnull', 'undefined', 'notundefined']
+const CAST_TEMPLATES = ['cast', 'castas']
 const ALL_TEMPLATES = [
+  ...VAR_TEMPLATES,
   ...FOR_TEMPLATES,
+  ...CONSOLE_TEMPLATES,
   ...IF_TEMPLATES,
-  ...NOT_TEMPLATES,
-  ...TRY_TEMPLATES,
-  'return',
-  'custom'
+  ...CAST_TEMPLATES,
+  'not',
+  'return'
 ]
 
 describe('Template usage', () => {
@@ -37,6 +39,8 @@ describe('Template usage', () => {
   testTemplateUsage('property access expression', 'expr.a.b.c', ALL_TEMPLATES)
   testTemplateUsage('element access expression', 'expr.a.b[c]', ALL_TEMPLATES)
   testTemplateUsage('unary expression', 'expr++', _.difference(ALL_TEMPLATES, FOR_TEMPLATES))
+  testTemplateUsage('conditional expression', 'if (x * 100{cursor})', ['not'])
+  testTemplateUsage('return expression', 'return x * 100', ['not'])
   testTemplateUsage('inside single line comment', '// expr', [])
   testTemplateUsage('inside multi line comment', '/* expr{cursor} */', [])
 })
