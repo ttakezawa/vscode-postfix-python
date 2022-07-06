@@ -55,7 +55,7 @@ export const build = () => [
   // new funcTemplates('type'),
   // new funcTemplates('int'),
   // new funcTemplates('len'),
-  // new funcTemplates('print'),
+  new funcTemplates('print'),
 
   new ifTemplates('if', 'if expr:', 'if \${1:{{expr}}}:'),
   new ifTemplates('ifn', 'if expr is None:', 'if \${1:{{expr}}} is None:'),
